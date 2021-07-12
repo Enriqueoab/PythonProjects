@@ -3,8 +3,6 @@ import string
 from words import words
 #That way we can get the resources which we create on the words document (The words array)
 
-
-
 def getWord(words):
 #Ramdomly we get a word from the list
     choosedWord=random.choice(words)
