@@ -138,16 +138,85 @@ for num in numbers:
        no_reps.append(num)
 print(f'The list without duplicates is: {no_reps}')
 
-#Tuples
+#Tuples, normally use to avoid changes of the data inside
+numbers=(1,2,3) #Tuples use () not [ ]
 
+#Unpacking, works with list too "[]"
+coordinates=(1,2,3)
+x,y,z=coordinates #Each variable get a value from the tupla
+print(x) #Return 1
 
-#
+#Dictionaries (Key value)
+customer = {
+    "name":"Enrique",
+    "surname":"Barca",
+    "age":30,
+    "verified":True
+}
+print(customer['name'])#Return Enrique, if there is no key give a error
+customer['name']= 'Oscar'#Updating the value of a key
+customer['sex']='Male'#Setting a new key and value
+print(customer['name'])#Return Enrique, if there is no key give a error
+print(customer.get('name'))#.get return none if the key does not exist
+print(customer.get('birth_year',1991))#With .get we can use a default value
 
-#
-#
-#
-#
-#
+#Practice, transform digits in number letters
+customer = {
+    0:"Cero ",
+    1:"One ",
+    2:"two ",
+    3:"Trhee ",
+    4:"Four ",
+    5:"Five ",
+    6:"Six ",
+    7:"Seven ",
+    8:"Eight ",
+    9:"Nine "
+}
+number=input('What\'s yout phone number?')
+letters_phone=""
+for num in number:
+    i=int(num)
+    letters_phone=letters_phone + customer.get(i)
+print(letters_phone)
+
+#Functions
+def number_to_letters(number):
+
+    customer = {
+        0:"Cero ",
+        1:"One ",
+        2:"two ",
+        3:"Trhee ",
+        4:"Four ",
+        5:"Five ",
+        6:"Six ",
+        7:"Seven ",
+        8:"Eight ",
+        9:"Nine "
+    }
+    letters_phone=""
+    for num in number:
+        i=int(num)
+        letters_phone=letters_phone + customer.get(i)
+    print(letters_phone)
+
+number_to_letters(input('What\'s yout phone number?'))
+
+#Function using key value argument, could be useful to improve the readability of our code
+def say_hello(first_name,last_name):
+    print(f'Hello {first_name} {last_name}')
+    print('Welcome to Python!')
+
+say_hello(last_name='Barca',first_name='Enrique')#Return Hello Enrique Barca
+say_hello('Barca',first_name='Enrique')#If we mix first it has to be the positional and them the keyword argumet
+
+#Function with return
+def square(number):
+    return number*number
+
+print(square(3))#Return 9
+
 #
 #
 #
