@@ -96,8 +96,7 @@ numbers=[5,7,1,8,3,66,55,88,4,1,99,100]
 largest=0
 pos=0
 neg=-abs(len(numbers))
-#print(neg+ 1)
-#for num in numbers[0:math.floor(len(numbers)/2)]:
+
 for num in numbers:
     print(num)
     if numbers[pos] > numbers[neg]:
@@ -261,7 +260,27 @@ class Cat(Animal):#Get the general methods through the variable 'Animal'
 dog=Dog()
 dog.walk()
 
-#
-#
-#
+#Modules, both ways to import a module or just a method
+import utils as u
+from utils import find_max 
+u.find_max(numbers=[5,9,8,1,2,3,6,4,7,8,9,4])
+find_max(numbers=[5,9,8,1,2,3,6,4,7,8,9,4])
+
+#Packages, container for multiple modules (To get the code organize)
+import ecommerce.shipping as ship #Package and the name of the module
+ship.calc_shipping() #Now we have access to the functions in it     
+
+#Files and directories utils
+from pathlib import Path
+path=Path('ecommerce')#Set theURL of the directory where we are going to work
+print(path.exists())
+new_path=Path('example')#Non existing directory
+new_path.mkdir()
+new_path.rmdir()
+path.glob('*')#Look for all
+path.glob('*.*')#Look for all the files
+for file in path.glob('*.py'): #That way we see the files we got 
+    print(file)#Look for a specific files extension
+
+
 #
