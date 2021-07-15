@@ -209,7 +209,6 @@ def say_hello(first_name,last_name):
     print('Welcome to Python!')
 
 say_hello(last_name='Barca',first_name='Enrique')#Return Hello Enrique Barca
-say_hello('Barca',first_name='Enrique')#If we mix first it has to be the positional and them the keyword argumet
 
 #Function with return
 def square(number):
@@ -217,9 +216,51 @@ def square(number):
 
 print(square(3))#Return 9
 
-#
-#
-#
+#Exeptions
+try:
+    age=int(input('Age: '))
+    income=20000
+    risk= income/age
+    print(age)
+except ZeroDivisionError:#Error fot try to /0
+    print('Age can not be cero')
+except ValueError:#Error for not a number
+    print('Invalid value')
+
+#Classes, Constructors
+     
+class Point:
+    def __init__(self,x,y):#Constructor to ceate a object with values
+        self.x = x
+        self.y = y
+
+    def move(self):#Every method has to have self as first parameter
+        print(f'Move{self.x}')#That way we can access to the variables of the class
+
+    def draw(self):
+        print('Draw')
+
+
+point1=Point(10,15)#Instance of our object
+point1.move()#Call to the method
+point1.x=10 #Set an atributte to a class
+
+#Inheritance, A father class with common methods for some other objects
+
+class Animal:#General class
+    def walk(self):
+        print('Walking')
+
+class Dog(Animal):#Get the general methods through the variable 'Animal'
+    def bark(self):#Specific method of the class dog
+        print('Barking')
+
+class Cat(Animal):#Get the general methods through the variable 'Animal'
+   pass #That way we can set a empty class just with the general methods
+
+dog=Dog()
+dog.walk()
+
 #
 #
 #
