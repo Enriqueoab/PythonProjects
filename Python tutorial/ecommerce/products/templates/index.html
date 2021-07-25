@@ -1,0 +1,11 @@
+<h1>Products</h1>
+<ul>
+    <!-- 'products' is the context got it from the view.index -->
+    {% for product in products %}
+        <!-- Django will evaluate the expressions in double curly braces 
+        and render in the html-->
+        <li>{{ product.name }}, ({{product.price}}€)</li>
+    {% endfor %}
+   
+</ul>
+
