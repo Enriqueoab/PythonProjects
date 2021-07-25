@@ -1,11 +1,23 @@
-<h1>Products</h1>
-<ul>
-    <!-- 'products' is the context got it from the view.index -->
-    {% for product in products %}
-        <!-- Django will evaluate the expressions in double curly braces 
-        and render in the html-->
-        <li>{{ product.name }}, ({{product.price}}€)</li>
-    {% endfor %}
-   
-</ul>
+{% extends 'base.html' %}
+<!-- extend the base.html template -->
 
+{% block content %}
+<!-- Fill the hole (block) that we defined in the base.html file -->
+
+    <h1>Products</h1>
+    <div class="row">
+        {% for product in products %}
+        <div class="col">
+            <div class="card" style="width: 16rem">
+            <img src="{{ product.image_url }}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="product-name">{{product.name}}</h5>
+                    <p class="product_price">{{product.price}}€</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
